@@ -1,0 +1,79 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="bower_components/momentjs/moment.js"></script>
+<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="bower_components/angular-daterangepicker/js/angular-daterangepicker.js"></script>
+<script src="main.js"></script>
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<h2>Flight Details</h2>
+</head>
+<body ng-app = "myApp">
+
+			<div ng-controller="dateCtrl" style="padding:5px; display:inline-flex;">
+			  <div class="form-group">
+                <label for="startDate">StartDate</label>
+                <input style="max-width:100px;" type="text" class="form-control" id="startDate" value="07/01/2015">
+              </div>
+
+              <div class="form-group">
+                <label for="endDate">EndDate</label>
+                <input style="max-width:100px;" type="text" class="form-control" id="endDate" value="07/15/2015">
+              </div>
+			  </div>
+			<div ng-controller="myCtrl" >
+			<div ng-repeat="data in person"  ng-init="myData();" style="border-bottom:1px solid black; padding:5px;">
+			<label>Flight Name : </label><span>{{data.flightName}}<span><br>
+			<label>Flight Date : </label><span>{{data.flightDate}}<span><br>
+			<label>Flight City :</label><span>{{data.city}}<span><br>
+			</div>
+			</div>
+<div ng-controller="dateCtrl">
+		<div class="col-md-4 col-md-offset-2 demo">
+            <h4>Your Date Range Picker</h4>
+            <input date-range-picker class="form-control date-picker" type="text" ng-model="datePicker.date" />
+            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+          </div>
+</div>
+
+</body>
+</html> -->
+
+
+
+<!doctype html>
+<html ng-app="myApp" >
+<head>
+  <meta charset="utf-8">
+  <script>document.write('<base href="' + document.location + '" />');</script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
+	<script src="bower_components/momentjs/moment.js"></script>
+	<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<script src="bower_components/angular-daterangepicker/js/angular-daterangepicker.js"></script>
+  <script src="main.js"></script>
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body ng-controller="myCtrl">
+	<h2>Flight Details</h2>
+	<div class="daterange">
+  <!-- <h3> Selected Start Date: {{startDate}}</h3>
+	<h3> Selected End Date: {{endDate}}</h3> -->
+	<!-- <input  date-range-picker class="form-control date-picker" type="text" ng-model="date" /> -->
+
+  <label>From</label><input id="startDate" type="text" ng-model="startDate" datepicker />
+	<label>To</label><input id="endDate" type="text" ng-model="endDate" datepicker />
+</div>
+	<div ng-repeat="data in person | dateFilter:startDate:endDate" ng-change="filterDate();" style="border-bottom:1px solid black; padding:5px;">
+	<label>Flight Name : </label><span>{{data.flightName}}<span><br>
+	<label>Flight Date : </label><span>{{data.flightDate}}<span><br>
+	<label>Flight City :</label><span>{{data.city}}<span><br>
+	</div>
+</body>
+</html>

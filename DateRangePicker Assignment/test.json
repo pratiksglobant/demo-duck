@@ -1,0 +1,22 @@
+{
+   "person": [
+     {
+            "flightName": "KingFisher",
+            "flightDate": "12/12/2015",
+            "flightTime": "12:30:00",
+            "city": "Delhi"
+     },
+     {
+            "flightName": "Spicejet",
+            "flightDate": "13/12/2015",
+            "flightTime": "12:30:00",
+            "city": "Pune"
+        },
+       {
+            "flightName": "Dolphin",
+            "flightDate": "22/12/2015",
+            "flightTime": "12:30:00",
+            "city": "Punjab"
+        }
+   ]
+}
